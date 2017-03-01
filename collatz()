@@ -1,24 +1,19 @@
 def collatz(number):
     if number == 1:
-        
         return number
     elif number %2 == 0:
         number = number//2
         print(number)
-     
         return collatz(number)
     else:
         number = 3 * number + 1
         print(number)
         return collatz(number) 
 print('Enter number:')
-
 while True:
     try:
-        number=int(input())
-       
-        number=collatz(number)
-        
+        number=int(input())       
+        number=collatz(number)     
         if number==1:
             break
     except ValueError:
