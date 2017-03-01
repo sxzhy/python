@@ -1,15 +1,26 @@
 def collatz(number):
-    print(number)
     if number == 1:
+        
         return number
     elif number %2 == 0:
-        return collatz(number//2)
+        number = number//2
+        print(number)
+     
+        return collatz(number)
     else:
-        return collatz(3 * number + 1) 
+        number = 3 * number + 1
+        print(number)
+        return collatz(number) 
 print('Enter number:')
 
 while True:
-    number=int(input())
-    number=collatz(number)
-    if number==1:
-        break
+    try:
+        number=int(input())
+       
+        number=collatz(number)
+        
+        if number==1:
+            break
+    except ValueError:
+        print('Please enter a int number!')
+
